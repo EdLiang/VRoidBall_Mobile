@@ -5,34 +5,39 @@ using UnityEngine;
 public class Fade : MonoBehaviour
 {
     CanvasGroup canvasGroup;
+
+
     // Start is called before the first frame update
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        canvasGroup.alpha = 0;
-        FadeIn();
+        FadeIn();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isFading) FadeInUpdate();
     }
 
+    private bool isFading = false;
     public void FadeIn()
     {
-        StartCoroutine(DoFade());
+        //StartCoroutine(DoFade());
+        canvasGroup.alpha = 0;
+        isFading = true;
+        canvasGroup.interactable = false;
     }
 
-    IEnumerator DoFade()
+    private void FadeInUpdate()
     {
-        while (canvasGroup.alpha < 1)
+        canvasGroup.alpha += Time.deltaTime / 3; // takes 3 second
+        
+        if (canvasGroup.alpha >= 1)
         {
-            canvasGroup.interactable = false;
-            canvasGroup.alpha += Time.deltaTime / 3;
-            yield return null;
+            canvasGroup.alpha = 1;
+            canvasGroup.interactable = true;
+            isFading = false;
         }
-        canvasGroup.interactable = true;
-        yield return null;
     }
 }
