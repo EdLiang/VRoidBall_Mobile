@@ -29,6 +29,7 @@ public class Fade : MonoBehaviour
         canvasGroup.interactable = false;
     }
 
+    // good fade
     private void FadeInUpdate()
     {
         canvasGroup.alpha += Time.deltaTime / 3; // takes 3 second
