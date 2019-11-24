@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayGame()
     {
         //TODO Change this from sudden change to a fade
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("GameScene1");
+        Debug.Log("THIS IS HAPPENING");
     }
 }
