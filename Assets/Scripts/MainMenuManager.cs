@@ -21,6 +21,5 @@ public class MainMenuManager : MonoBehaviour
     {
         //TODO Change this from sudden change to a fade
         SceneManager.LoadScene("GameScene1");
-        Debug.Log("THIS IS HAPPENING");
     }
 }
