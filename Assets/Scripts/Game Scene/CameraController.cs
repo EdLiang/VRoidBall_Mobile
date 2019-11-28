@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
+    public GameObject player;
+    private Vector3 offset = new Vector3(0, 2, -1.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = player.transform.position + offset;
     }
 }
