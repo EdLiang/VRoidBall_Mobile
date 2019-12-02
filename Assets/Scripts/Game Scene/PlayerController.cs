@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float gravityModifier;
-    private bool isOnGround = true;
+    public bool isOnGround = true;
     public bool gameOver = false;
     
     private Rigidbody playerRb;
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private float horizontalInput;
     private float forwardInput;
-    private float speed = 10f;
-    private float turnSpeed = 100f;
+    private float speed = 8f;
+    private float turnSpeed = 130f;
     public float jumpForce;
     // Start is called before the first frame update
     void Start()
